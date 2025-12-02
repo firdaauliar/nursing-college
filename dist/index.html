@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    
+    <link rel="stylesheet" href="./build/assets/app2-CVxwxOCq.css">
+    <!-- <script type="module" src="./build/assets/app-DtCVKgHt.js"></script> -->
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Laboratory of Nursing Poltekkes Sidoarjo" />
+    <meta name="author" content="Your name" />
+
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
+    <meta property="og:site_name" content="" /> <!-- website name -->
+    <meta property="og:site" content="" /> <!-- website link -->
+    <meta property="og:title" content="" /> <!-- title shown in the actual shared post -->
+    <meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+    <meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+    <meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+    <meta name="twitter:card" content="summary_large_image" /> <!-- to have large image post format in Twitter -->
+
+    <!-- Webpage Title -->
+    <title>Nursing Poltekkes Sidoarjo</title>
+
+    <!-- Styles -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet" />
+    
+
+
+    <!-- PDF viewer -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf_viewer.min.css"
+        integrity="sha512-p0IfbrMdZR9K3frD+U5xodiEuT9e3nEzfLRo29LqvB8jJVKbftQvRTkhCD1oYNVuhFOsfDTLahPrPuSM0eyAPg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Favicon  -->
+    <link rel="icon" href="img/logo-poltekkes-sby-single.png" />
+</head>
+
+<body data-spy="scroll" data-target=".fixed-top">
+    
+    <!-- Navigation -->
+    <nav class="navbar fixed-top ">
+        <div class="container sm:px-4 flex lg:px-4 flex-wrap items-center flex-row justify-between ">
+
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="text-gray-800 font-semibold text-3xl leading-4 no-underline page-scroll" href="index.html">Pavo</a> -->
+
+            <!-- Image Logo -->
+            <a class="inline-block mr-4 py-0.5 text-xl whitespace-nowrap hover:no-underline focus:no-underline"
+                href="./index.html">
+                <img src="./img/NEW-LOGO-POLTEKKES-SBY.png" alt="alternative" class="h-12" />
+            </a>
+
+            <button
+                class="background-transparent rounded text-xl leading-none hover:no-underline focus:no-underline lg:hidden lg:text-gray-400"
+                type="button" data-toggle="offcanvas">
+                <span class="navbar-toggler-icon inline-block w-8 h-8 align-middle"></span>
+            </button>
+
+            <div class="navbar-collapse offcanvas-collapse lg:flex lg:flex-grow" id="navbarsExampleDefault">
+                <ul class="pl-0 mt-3 mb-2 flex flex-col list-none lg:mt-0 lg:mb-0 lg:flex-row text-lg ml-auto">
+                    <li>
+                        <a class="nav-link page-scroll "x-data="{ isActive: window.location.hash === '#header' || window.location.pathname === '/' }"
+                            :class="isActive ? 'active nav-link page-scroll ' : 'nav-link page-scroll '"
+                            href="./index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li>
+                        <a class="nav-link page-scroll" href="./laboratory-schedule/index.html">Laboratory Schedule</a>
+                    </li>
+
+                    <!-- Dropdown menu -->
+                    <li x-data="{ open: false }" @mouseenter.window="if (window.innerWidth >= 1024) open = true"
+                        @mouseleave.window="if (window.innerWidth >= 1024) open = false" @click.away="open = false"
+                        class="relative list-none">
+
+                        <!-- Trigger -->
+                        <a href="#" @click.prevent="open = !open" class="nav-link dropdown-toggle cursor-pointer"
+                            :aria-expanded="open">
+                            Laboratory Document
+                        </a>
+
+                        <!-- Dropdown Menu -->
+                        <div x-show="open" x-transition
+                            class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md py-2 z-50"
+                            style="display: none;">
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">LOAN FORM</a>
+                            <div class="border-t my-1"></div>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">PRACTICUM
+                                MODULE</a>
+                            <div class="border-t my-1"></div>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">WORK
+                                INSTRUCTION</a>
+                            <div class="border-t my-1"></div>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">LABORATORY
+                                PRACTICE FILES</a>
+                            <div class="border-t my-1"></div>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">CLINICAL PRACTICE
+                                FILE</a>
+                        </div>
+                    </li>
+                    <!-- Dropdown menu -->
+                    <li x-data="{ open: false }" @mouseenter.window="if (window.innerWidth >= 1024) open = true"
+                        @mouseleave.window="if (window.innerWidth >= 1024) open = false" @click.away="open = false"
+                        class="relative list-none">
+
+                        <!-- Trigger -->
+                        <a href="#" @click.prevent="open = !open" class="nav-link dropdown-toggle cursor-pointer"
+                            :aria-expanded="open">
+                            Our Laboratory
+                        </a>
+
+                        <!-- Dropdown Menu -->
+                        <div x-show="open" x-transition
+                            class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md py-2 z-50"
+                            style="display: none;">
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Article
+                                Details</a>
+                            <div class="border-t my-1"></div>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Terms
+                                Conditions</a>
+                            <div class="border-t my-1"></div>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Privacy
+                                Policy</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="nav-link page-scroll" href="#details">Survey Kepuasan</a>
+                    </li>
+                    <li>
+                        <a class="nav-link page-scroll" href="#pricing">Database</a>
+                    </li>
+                </ul>
+                <span class="block lg:ml-3.5">
+                    <a class="no-underline" href="#your-link">
+                        <i
+                            class="fab fa-apple text-indigo-600 hover:text-pink-500 text-xl transition-all duration-200 mr-1.5"></i>
+                    </a>
+                    <a class="no-underline" href="#your-link">
+                        <i
+                            class="fab fa-android text-indigo-600 hover:text-pink-500 text-xl transition-all duration-200"></i>
+                    </a>
+                </span>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+
+        <!-- Header -->
+    <header id="header">
+        
+        <!-- Background image -->
+        <div class="absolute inset-0 -z-10 bg-[url('/img/header-nurse (2).jpg')] bg-cover bg-center w-full h-[34rem]"
+            style="background-image:  url('/img/header-nurse (3).jpg')"></div>
+
+        <!-- Blur + white overlay -->
+        <div class="absolute inset-0 -z-0 bg-blue-100/10 backdrop-blur-sm h-[34rem] backdrop-filter"></div>
+        <div class="container to-animate flex flex-col justify-end h-[34rem]">
+
+            <div class="xl:mb-16 relative to-animate ">
+                <p class="h1-large mb-3 font-semibold max-w-4xl tracking-tight">"Excellence in Nursing Practice, Powered by
+                    Innovation"</p>
+                
+                <p class="text-3xl tracking-tight ">Sidoarjo Nursing Laboratory</p>
+                
+                
+            </div>
+        </div> <!-- end of container -->
+    </header> <!-- end of header -->
+    <!-- end of header -->
+
+
+    <!-- Introduction -->
+    
+    <!-- end of introduction -->
+
+    <!-- content or information card/lists can be shown here-->
+    
+
+
+
+    <!-- Features -->
+    
+    <!-- end of cards-1 -->
+    <!-- end of features -->
+
+
+    <!-- Details 1 -->
+    
+    <!-- end of details 1 -->
+
+
+    <!-- Details 2 -->
+    
+    <!-- end of details 2 -->
+
+
+    <!-- Details Lightbox -->
+    <!-- Lightbox -->
+    
+    <!-- end of lightbox-basic -->
+    <!-- end of lightbox -->
+    <!-- end of details lightbox -->
+
+
+    <!-- Details 3 -->
+    
+    <!-- end of details 3 -->
+
+
+    <!-- Statistics -->
+    <div class="counter">
+        <div class="container px-4 sm:px-8">
+
+            <!-- Counter -->
+            <div id="counter">
+                <div class="cell">
+                    <div class="counter-value number-count" data-count="231">1</div>
+                    <p class="counter-info">Happy Users</p>
+                </div>
+                <div class="cell">
+                    <div class="counter-value number-count" data-count="385">1</div>
+                    <p class="counter-info">Issues Solved</p>
+                </div>
+                <div class="cell">
+                    <div class="counter-value number-count" data-count="159">1</div>
+                    <p class="counter-info">Good Reviews</p>
+                </div>
+                <div class="cell">
+                    <div class="counter-value number-count" data-count="127">1</div>
+                    <p class="counter-info">Case Studies</p>
+                </div>
+                <div class="cell">
+                    <div class="counter-value number-count" data-count="211">1</div>
+                    <p class="counter-info">Orders Received</p>
+                </div>
+            </div>
+            <!-- end of counter -->
+
+        </div> <!-- end of container -->
+    </div> <!-- end of counter -->
+    <!-- end of statistics -->
+
+    <div class="">
+        <h2 class="mb-8 text-center lg:max-w-xl lg:mx-auto uppercase ">Tata Tertib Praktek Laboratorium</h2>
+        <div class="grid grid-cols-5 xl:min-h-[400px]">
+            <div class="flex justify-center items-start col-span-2 h-full" >
+                <img src="http://localhost/img/nurse-rules.png" class="w-[75%] mb-12 self-start" alt="">
+            </div>
+
+            <div class="backdrop-blur-sm bg-white/40 lg:mx-8 col-span-3 lg:pb-4" x-data="{ selected: 1 }">
+                <ul>
+                    <li class="border-b border-gray-200 lg:py-2 lg:px-2">
+                        
+                        <button @click="selected !== 1 ? selected = 1 : selected = null"
+                            class="w-full flex items-center flex-row justify-between">
+                            <span>1. Tahap Persiapan</span>
+                            <svg 
+                            class="transform transition-transform duration-300"
+                            :class="selected === 1 ? '-rotate-180' : '' "
+                            width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.75 12.5L15 18.75L21.25 12.5" stroke="#1E1E1E" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        
+                        <div x-ref="accordion_terms"
+                            x-bind:style="selected == 1 ? 'max-height:' + $el.scrollHeight + 'px' : ''"
+                            class="relative overflow-hidden max-h-0 transition-all duration-500 text-sm/6">
+                            <p class="p-6">
+                                a. Mahasiswa wajib mengikuti praktek sesuai jadwal yang telah ditetapkan, dengan prosentase
+                                kehadiran
+                                100%. <br>
+                                b. Mahasiswa wajib menguasai (membaca dan memahami) intruksi kerja keterampilan yang akan
+                                dipraktekkan. <br>
+                                c. Demi kelancaran proses bimbingan, setiap kelompok wajib mengkonfirmasi pembimbing sesuai
+                                dengan jadwal 1 (satu) hari sebelum pelaksanaan praktek laboratrium.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="border-b border-gray-200 lg:py-2 lg:px-2">
+                        
+                        <button @click="selected !== 2 ? selected = 2 : selected = null"
+                            class="w-full flex items-center flex-row justify-between">
+                            <span>2. Tahap Pelaksanaan</span>
+                            <svg class="transform transition-transform duration-300"
+                            :class="selected === 2 ? '-rotate-180' : '' " width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.75 12.5L15 18.75L21.25 12.5" stroke="#1E1E1E" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        
+                        <div x-ref="accordion_terms"
+                            x-bind:style="selected == 2 ? 'max-height:' + $el.scrollHeight + 'px' : ''"
+                            class="relative overflow-hidden max-h-0 transition-all duration-500 text-sm/6">
+                            <p class="p-6">
+                                a. Mahasiswa siap di ruang laboratorium 20 menit sebelum praktek dimulai, dan sudah
+                                mempersiapkan
+                                peralatan yang akan di pergunakan serta membersihkan ruang laboratorium yang akan digunakan
+                                untuk
+                                praktek. <br>
+                                b. Mahasiswa wajib menggunakan seragam dan tanda pengenal, skort biru serta melepas
+                                sepatu/alas kaki
+                                saat memasuki ruang laboratorium, melepas semua aksesoris kecuali jam tangan. <br>
+                                c. Mahasiswa wajib membawa instruksi kerja dari keterampilanyang akan dipraktekkan
+                                (dialarang
+                                meminjam milik temannya). <br>
+                                d. Mahasiswa menghubungi pembimbing 15 menit sebelum praktek dimulai (peralatan sudah siap).
+                                <br>
+                                e. Bagi mahasiswa yang terlambat 15 menit tanpa memberitahukan pembimbing, tidak
+                                diperkenankan
+                                mengikuti praktek laboratorium. <br>
+                                f. Selama proses bimbingan alat komunikasi Hanphone/phoneCell harus dimatikan. <br>
+                                g. Mahasiswa wajib mengikuti proses bimbingan dengan tertib. <br>
+                                h. Menjaga kebersihan ruangan laboratorium selama pelaksanaan praktek dan dilarang
+                                mencoret/merusak
+                                phantom. <br>
+                                i. Berlaku sopan, santun dan menjaga etika dalam laboratorium. <br>
+                                j. Dilarang menyentuh, memindahkan dan menggunakan peralatan di laboratorium yang tidak
+                                sesuai
+                                dengan kegiatan praktikum matakuliah yang telah dijadwalkan. <br>
+                                k. Membuang sampah sesuai pada tempatnya (sesuai label pada tempat sampah).
+                            </p>
+                        </div>
+                    </li>
+                    <li class="border-b border-gray-200 lg:py-2 lg:px-2">
+                        
+                        <button @click="selected !== 3 ? selected = 3 : selected = null"
+                            class="w-full flex items-center flex-row justify-between">
+                            <span>3. Tahap Akhir</span>
+                            <svg 
+                            class="transform transition-transform duration-300"
+                            :class="selected === 3 ? '-rotate-180' : '' "
+                            width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.75 12.5L15 18.75L21.25 12.5" stroke="#1E1E1E" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        
+                        <div x-ref="accordion_terms"
+                            x-bind:style="selected == 3 ? 'max-height:' + $el.scrollHeight + 'px' : ''"
+                            class="relative overflow-hidden max-h-0 transition-all duration-500 text-sm/6">
+                            <p class="p-6">
+                                a. Setelah selesai praktek, peralatan dikembalikan ketempat semual dalam keadaan bersih dan
+                                kering. <br>
+                                b. Sesudah kegiatan praktek mahasiswa membersihkan ruangan laboratorium. <br>
+                                c. Setelah selesai praktek, setiap mahasiswa diwajibkan meminta tanda tangan kepada
+                                pembimbing
+                                tentang keterampilan yang telah dilaksanakan pada lembar kerja. <br>
+                                d. Mahasiswa wajib mengisi lembar daftar hadir mahasiswa.
+                            </p>
+                        </div>
+                    </li>
+                    <li class=" border-gray-200 lg:py-2 lg:px-2">
+                        
+                        <button @click="selected != 4 ? selected = 4 : selected=null"
+                            class="w-full flex items-center flex-row justify-between">
+                            <span>Download PDF file here</span>
+                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                            class="transform transition-transform duration-300"
+                            :class="selected === 4 ? '-rotate-180' : '' "
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.75 12.5L15 18.75L21.25 12.5" stroke="#1E1E1E" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <div x-ref="accordion_terms"
+                            x-bind:style="selected == 4 ? 'max-height:' + $el.scrollHeight + 'px' : ''"
+                            class="relative overflow-hidden max-h-0 transition-all duration-500 text-sm/6">
+                            <div class="pdf-container" id="pdf_viewer">
+                                <iframe src="http://localhost/pdf/Tata Tertib.pdf" style="border:none;" class="lg:w-full lg:min-h-[100vh] mt-2"></iframe>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Testimonials -->
+    <div class="slider-1 py-32 bg-gray">
+        <div class="container px-4 sm:px-8">
+            <h2 class="mb-12 text-center lg:max-w-xl lg:mx-auto uppercase">Letak lan & wifi jurusan keperawatan</h2>
+
+            
+            <div class="flex gap-y-8 flex-col">
+                <img src="http://localhost/img/letak-lan-dan-wifi-jurusan-keperawatan-polkesbaya-cropped.png" alt=""
+                    class="max-h-[50%] max-w-2xl m-auto">
+                <img src="http://localhost/img/letak-lan-dan-wifi-jurusan-keperawatan-polkesbaya-2-cropped.png"
+                    alt="" class="max-h-[50%] max-w-2xl m-auto">
+            </div>
+        </div> <!-- end of container -->
+    </div> <!-- end of slider-1 -->
+
+
+    <div class="slider-1 py-32">
+        <div class="container px-4 sm:px-8">
+            <h2 class="mb-12 text-center lg:max-w-xl lg:mx-auto uppercase">Jalur Evakuasi dan Letak Apar</h2>
+
+            
+            <div class="flex gap-y-8 flex-col">
+                <img src="http://localhost/img/jalur-evakuasi-dan-letak-apar-lab-polkesbaya-cropped.png" alt=""
+                    class="max-h-[50%] max-w-2xl m-auto">
+                <img src="http://localhost/img/jalur-evakuasi-dan-letak-apar-lab-polkesbaya-2-cropped.png" alt=""
+                    class="max-h-[50%] max-w-2xl m-auto">
+            </div>
+        </div> <!-- end of container -->
+    </div> <!-- end of slider-1 -->
+    <!-- end of testimonials -->
+
+
+    
+
+
+    
+
+    
+
+    <!-- Footer -->
+    
+    
+    
+    
+    
+    <!-- end of container -->
+    
+    <!-- end of footer -->
+
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="container mx-auto px-4">
+            <!-- Bagian atas: logo + info -->
+            <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-8">
+                <!-- Logo dan Nama -->
+                <div class="flex flex-col items-start">
+                    <img src="http://localhost/img/NEW-LOGO-POLTEKKES-SBY.png" alt="alternative" class="h-16 w-48" />
+
+                    <h2 class="text-white text-xl font-semibold">Prodi Keperawatan</h2>
+                    <p class="mt-2 text-gray-400 text-sm">Poltekkes Kemenkes Surabaya </p>
+                </div>
+
+                <!-- Alamat / Kontak -->
+                <div class="flex flex-col text-sm text-gray-400 space-y-2">
+                    <p>Jl. Prof. DR. Moestopo, Mojo, Kec. Gubeng, Surabaya</p>
+                    <p>Email: <a href="mailto:ti@uin-malang.ac.id"
+                            class="hover:text-white">admin@poltekkes-surabaya.ac.id</a>
+                    </p>
+                    <p>Telp: (031) 5038487</p>
+                    <p>Fax: (0341) 551612</p>
+                </div>
+
+                <!-- Media Sosial -->
+                <div class="flex flex-col space-y-2">
+                    <span class="text-white font-semibold">Media Sosial</span>
+                    <div class="flex gap-4">
+                        <a href="#" class="hover:text-white">Facebook</a>
+                        <a href="#" class="hover:text-white">Instagram</a>
+                        <a href="#" class="hover:text-white">Twitter</a>
+                        <a href="#" class="hover:text-white">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bagian bawah: copyright -->
+            <div class="mt-12 border-t border-gray-700 pt-4 text-center text-gray-500 text-sm">
+                &copy; 2025 Program Studi Teknik Informatika, Universitas Islam Negeri Maulana Malik Ibrahim Malang
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+    <!-- Scripts -->
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <!-- jQuery Easing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"
+        integrity="sha512-0QbL0ph8Tc8g5bLhfVzSqxe9GERORsKhIn1IrpxDAgUsbBGz/V7iSav2zzW325XGd1OMLdL4UiqRJj702IeqnQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Swiper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"
+        integrity="sha512-Ysw1DcK1P+uYLqprEAzNQJP+J4hTx4t/3X2nbVwszao8wD+9afLjBQYjz7Uk4ADP+Er++mJoScI42ueGtQOzEA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Magnific Popup -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.2.0/jquery.magnific-popup.min.js"
+        integrity="sha512-fCRpXk4VumjVNtE0j+OyOqzPxF1eZwacU3kN3SsznRPWHgMTSSo7INc8aY03KQDBWztuMo5KjKzCFXI/a5rVYQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <link rel="modulepreload" as="script" href="./build/assets/app-DtCVKgHt.js" /><link rel="modulepreload" as="script" href="/build/assets/scripts-CEsTgKFS.js" /><script type="module" src="/build/assets/app-DtCVKgHt.js"></script><script type="module" src="/build/assets/scripts-CEsTgKFS.js"></script>    <script src="https://unpkg.com/alpinejs"></script>
+
+    <script>
+        // close menu on click in small viewport
+        $('[data-toggle="offcanvas"], .nav-link:not(.dropdown-toggle').on('click', function() {
+            $('.offcanvas-collapse').toggleClass('open')
+        })
+
+        // hover in desktop mode
+        function toggleDropdown(e) {
+            const _d = $(e.target).closest('.dropdown'),
+                _m = $('.dropdown-menu', _d);
+            setTimeout(function() {
+                const shouldOpen = e.type !== 'click' && _d.is(':hover');
+                _m.toggleClass('show', shouldOpen);
+                _d.toggleClass('show', shouldOpen);
+                $('[data-toggle="dropdown"]', _d).attr('aria-expanded', shouldOpen);
+            }, e.type === 'mouseleave' ? 300 : 0);
+        }
+        $('body')
+            .on('mouseenter mouseleave', '.dropdown', toggleDropdown)
+            .on('click', '.dropdown-menu a', toggleDropdown);
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+            // scroll animation
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        console.log(entry.target)
+                        entry.target.classList.add("showed")
+                    } else {
+                        entry.target.classList.remove("showed")
+                    }
+                });
+            }, {})
+
+            //contoh kodingan
+            const tobeAnimated = document.querySelectorAll(".to-animate")
+            tobeAnimated.forEach(el => observer.observe(el))
+        });
+    </script>
+</body>
+
+
+</html>

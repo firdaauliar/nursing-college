@@ -12,6 +12,39 @@ Route::get('/laboratory-schedule', function() {
     return view('landing.labSchedule');
 })->name('labSchedule');
 
+Route::get('/basic-nursing-laboratory', function() {
+    return view('landing.basicNursingLab');
+})->name('basicLab');
+
+Route::get('/medical-surgical-nursing-laboratory', function() {
+    return view('landing.medicalSurgicalLab');
+})->name('medicSurgicalLab');
+
+Route::get('/pediatric-nursing-laboratory', function() {
+    return view('landing.pediatricLab');
+})->name('pediatricLab');
+
+Route::get('/maternity-nursing-laboratory', function() {
+    return view('landing.maternityLab');
+})->name('maternityLab');
+
+Route::get('/psychiatric-nursing-laboratory', function() {
+    return view('landing.psychiatricLab');
+})->name('psychriaticLab');
+
+Route::get('/critical-emergency-nursing-laboratory', function() {
+    return view('landing.criticalEmergencyLab');
+})->name('criticalEmergencyLab');
+
+Route::get('/family-gerontics-community-laboratory', function() {
+    return view('landing.familyGeronticsComLab');
+})->name('familyGeronticsComLab');
+
+Route::get('/loan-form', function(){
+    return view('landing.loanForm');
+})->name('loanForm');
+
+
 Route::get('/berita', [PostController::class, 'articles'])->name('berita');
 
 Route::get('/admin', function () {
