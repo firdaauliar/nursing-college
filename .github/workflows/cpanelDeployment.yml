@@ -29,16 +29,22 @@ jobs:
           php-version: '8.2'
           tools: composer
 
-      # Install vendor untuk produksi
-      - name: Install PHP dependencies
-        run: |
-          composer install --no-dev --optimize-autoloader
+      # # Install vendor untuk produksi
+      # - name: Install PHP dependencies
+      #   run: |
+      #     composer install --no-dev --optimize-autoloader
 
       # Buat folder deployment (hanya file penting Laravel)
       - name: Prepare deployment folder
         run: |
           mkdir deploy
           cp -r app bootstrap config database public resources routes storage artisan composer.json composer.lock deploy/
+
+      # Install vendor di folder deploy (aman & tidak mengacaukan repo)
+      - name: Install PHP dependencies in deploy
+        run: |
+          cd deploy
+          composer install --no-dev --optimize-autoloader
 
       # Upload hanya isi folder deploy
       - name: FTP Deploy
@@ -52,6 +58,8 @@ jobs:
           exclude: |
             **/.git*
             **/node_modules/**
-            **/vendor/**  # jangan upload vendor di root repo
+            **/vendor/**
+            /vendor/**
+            vendor/**
             **/tests/**
             **/.github/**
