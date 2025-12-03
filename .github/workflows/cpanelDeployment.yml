@@ -55,7 +55,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           local-dir: deploy/laravel/
-          server-dir: public_html/nursing_poltekkes/
+          server-dir: nursing_poltekkes/
           dangerous-clean-slate: false
           exclude: |
             **/vendor/**
@@ -69,7 +69,6 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           local-dir: deploy/root/
-          server-dir: public_html/
           dangerous-clean-slate: false
           exclude: |
             index.php
