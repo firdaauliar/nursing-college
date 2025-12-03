@@ -42,7 +42,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Favicon  -->
-    <link rel="icon" href="../img/logo-poltekkes-sby-single.png" />
+    <link rel="icon" href="../../../../img/logo-poltekkes-sby-single.png" />
 </head>
 
 <body data-spy="scroll" data-target=".fixed-top">
