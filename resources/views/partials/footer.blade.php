@@ -34,7 +34,7 @@
 
             <!-- Bagian bawah: copyright -->
             <div class="mt-12 border-t border-gray-700 pt-4 text-center text-gray-500 text-sm">
-                &copy; 2025 Program Studi Teknik Informatika, Universitas Islam Negeri Maulana Malik Ibrahim Malang
+                &copy; Program Studi DIII Keperawatan Sidoarjo
             </div>
         </div>
     </footer>
