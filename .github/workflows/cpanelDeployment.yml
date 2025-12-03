@@ -7,59 +7,72 @@ on:
 
 jobs:
   FTP-Deploy-Action:
-    name: FTP-Deploy-Action
     runs-on: ubuntu-latest
+
     steps:
-      # Checkout hanya beberapa commit terakhir agar lebih cepat
+      # Checkout
       - name: Checkout code
-        uses: actions/checkout@v2.1.0
+        uses: actions/checkout@v3
         with:
           fetch-depth: 2
 
-      # Install Node dan build asset
+      # Build frontend
       - name: Build Frontend Assets
         run: |
           npm install
           npm run build
 
-      # Install PHP dan Composer
-      - name: Setup PHP
+      # Setup PHP + Composer
+      - name: Setup PHP & Composer
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
           tools: composer
 
-      # # Install vendor untuk produksi
-      # - name: Install PHP dependencies
-      #   run: |
-      #     composer install --no-dev --optimize-autoloader
+      # Install vendor (local only)
+      - name: Install PHP dependencies
+        run: composer install --no-dev --optimize-autoloader
 
-      # Buat folder deployment (hanya file penting Laravel)
-      - name: Prepare deployment folder
+      # Siapkan folder deploy
+      - name: Prepare Deployment
         run: |
           mkdir deploy
-          cp -r app bootstrap config database public resources routes storage artisan composer.json composer.lock deploy/
 
-      # Install vendor di folder deploy (aman & tidak mengacaukan repo)
-      - name: Install PHP dependencies in deploy
-        run: |
-          cd deploy
-          composer install --no-dev --optimize-autoloader
+          # Copy core Laravel ke folder laravel/
+          mkdir -p deploy/laravel
+          cp -r app bootstrap config database resources routes storage artisan composer.json composer.lock deploy/laravel/
 
-      # Upload hanya isi folder deploy
-      - name: FTP Deploy
+          # Copy public kecuali index.php ke root folder
+          mkdir -p deploy/root
+          cp -r public/* deploy/root/
+          rm -f deploy/root/index.php  # jangan upload index.php
+
+      # Deploy ke cpanel
+      - name: FTP Deploy Laravel Folder
         uses: SamKirkland/FTP-Deploy-Action@4.3.3
         with:
           server: ${{ secrets.SERVER }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          local-dir: deploy/
-          dangerous-clean-slate: false     # Hanya upload file yang berubah (incremental)
+          local-dir: deploy/laravel/
+          server-dir: public_html/nursing_poltekkes/
+          dangerous-clean-slate: false
           exclude: |
-            **/.git*
-            **/node_modules/**
             **/vendor/**
-            /vendor/**
-            vendor/**
-            **/tests/**
-            **/.github/**
+            **/node_modules/**
+            **/.git/**
+
+      - name: FTP Deploy Public Assets (Root)
+        uses: SamKirkland/FTP-Deploy-Action@4.3.3
+        with:
+          server: ${{ secrets.SERVER }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          local-dir: deploy/root/
+          server-dir: public_html/
+          dangerous-clean-slate: false
+          exclude: |
+            index.php
+            **/vendor/**
+            **/node_modules/**
+            **/.git/**
