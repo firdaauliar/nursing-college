@@ -39,7 +39,6 @@ jobs:
         run: |
           mkdir deploy
           cp -r app bootstrap config database public resources routes storage artisan composer.json composer.lock deploy/
-          cp -r vendor deploy/
 
       # Upload hanya isi folder deploy
       - name: FTP Deploy
