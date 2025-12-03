@@ -6,13 +6,13 @@ on:
       - main
 
 jobs:
-  deploy:
+  FTP-Deploy-Action:
+    name: FTP-Deploy-Action
     runs-on: ubuntu-latest
-
     steps:
       # Checkout hanya beberapa commit terakhir agar lebih cepat
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2.1.0
         with:
           fetch-depth: 2
 
@@ -48,7 +48,7 @@ jobs:
           server: ${{ secrets.SERVER }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          local-dir: deploy
+          local-dir: deploy/
           dangerous-clean-slate: false     # Hanya upload file yang berubah (incremental)
           exclude: |
             **/.git*
