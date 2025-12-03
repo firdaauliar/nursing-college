@@ -1,0 +1,78 @@
+name: Deploy Laravel to CPanel
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  FTP-Deploy-Action:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+
+      # Build frontend
+      - name: Build Frontend Assets
+        run: |
+          npm install
+          npm run build
+
+      # Setup PHP + Composer
+      - name: Setup PHP & Composer
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          tools: composer
+
+      # Install vendor (local only)
+      - name: Install PHP dependencies
+        run: composer install --no-dev --optimize-autoloader
+
+      # Siapkan folder deploy
+      - name: Prepare Deployment
+        run: |
+          mkdir deploy
+
+          # Copy core Laravel ke folder laravel/
+          mkdir -p deploy/laravel
+          cp -r app bootstrap config database resources routes storage artisan composer.json composer.lock deploy/laravel/
+
+          # Copy public kecuali index.php ke root folder
+          mkdir -p deploy/root
+          cp -r public/* deploy/root/
+          rm -f deploy/root/index.php  # jangan upload index.php
+
+      # Deploy ke cpanel
+      - name: FTP Deploy Laravel Folder
+        uses: SamKirkland/FTP-Deploy-Action@4.3.3
+        with:
+          server: ${{ secrets.SERVER }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          local-dir: deploy/laravel/
+          server-dir: public_html/nursing_poltekkes/
+          dangerous-clean-slate: false
+          exclude: |
+            **/vendor/**
+            **/node_modules/**
+            **/.git/**
+
+      - name: FTP Deploy Public Assets (Root)
+        uses: SamKirkland/FTP-Deploy-Action@4.3.3
+        with:
+          server: ${{ secrets.SERVER }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          local-dir: deploy/root/
+          server-dir: public_html/
+          dangerous-clean-slate: false
+          exclude: |
+            index.php
+            **/vendor/**
+            **/node_modules/**
+            **/.git/**
