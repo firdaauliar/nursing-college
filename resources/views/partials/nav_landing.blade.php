@@ -45,7 +45,7 @@
                         style="display: none;">
                         <a href="{{ route('loanForm') }}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">LOAN FORM</a>
                         <div class="border-t my-1"></div>
-                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">PRACTICUM
+                        <a href="{{ route('modulePracticum') }}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">PRACTICUM
                             MODULE</a>
                         <div class="border-t my-1"></div>
                         <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">WORK

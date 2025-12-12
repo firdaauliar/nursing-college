@@ -44,6 +44,10 @@ Route::get('/loan-form', function(){
     return view('landing.loanForm');
 })->name('loanForm');
 
+Route::get('/practicum-module', function(){
+    return view('landing.modulePracticum');
+})->name('modulePracticum');
+
 
 Route::get('/berita', [PostController::class, 'articles'])->name('berita');
 
@@ -61,5 +65,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('posts/createSlug', [PostController::class, 'checkSlug'])->middleware('auth')->name('posts.checkSlug');
     Route::resource('posts', PostController::class)->except(['show']);
 });
+
+Route::get('/download/{filename}', function($filename){
+    return Storage::disk('public')->download('files/Modul Praktikum/'.$filename);
+})->name('downloadModul');
 
 require __DIR__.'/auth.php';

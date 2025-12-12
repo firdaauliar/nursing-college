@@ -19,17 +19,6 @@
                     <p>Telp: (031) 5038487</p>
                     <p>Fax: (0341) 551612</p>
                 </div>
-
-                <!-- Media Sosial -->
-                <div class="flex flex-col space-y-2">
-                    <span class="text-white font-semibold">Media Sosial</span>
-                    <div class="flex gap-4">
-                        <a href="#" class="hover:text-white">Facebook</a>
-                        <a href="#" class="hover:text-white">Instagram</a>
-                        <a href="#" class="hover:text-white">Twitter</a>
-                        <a href="#" class="hover:text-white">LinkedIn</a>
-                    </div>
-                </div>
             </div>
 
             <!-- Bagian bawah: copyright -->

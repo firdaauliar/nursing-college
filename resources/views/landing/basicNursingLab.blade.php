@@ -348,4 +348,5 @@
             </div> <!-- end of container -->
         </div> <!-- end of slider-1 -->
         <!-- end of testimonials -->
+        
 @endsection
