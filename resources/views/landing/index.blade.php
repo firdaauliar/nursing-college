@@ -194,7 +194,7 @@
                     <div id="btnTatib1" class="flex justify-center relative rounded-md">
                         <div class="flex hover:bg-black/50 w-full h-full absolute rounded-md"></div>
                         <img class="rounded-md max-h-64 lg:max-h-80 object-contain"
-                            src="{{ asset('img/tata tertib/tata tertib praktik lab.jpeg') }}" alt="" />
+                            src="{{ asset('img/tata-tertib/tata-tertib-praktik-lab.jpeg') }}" alt="" />
                     </div>
 
                     <a href="#">
@@ -218,7 +218,7 @@
                     <div id="btnTatib2" class="flex justify-center relative rounded-md">
                         <div class="flex hover:bg-black/50 w-full h-full absolute rounded-md"></div>
                         <img class="rounded-md max-h-64 lg:max-h-80 object-contain"
-                            src="{{ asset('img/tata tertib/tata tertib penggunaan fasilitas lab.jpeg') }}"
+                            src="{{ asset('img/tata-tertib/tata-tertib-penggunaan-fasilitas-lab.jpeg') }}"
                             alt="" />
                     </div>
 
