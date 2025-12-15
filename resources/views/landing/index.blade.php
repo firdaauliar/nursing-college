@@ -250,7 +250,7 @@
         <div class="relative w-full max-w-2xl max-h-full">
             <!-- Modal content -->
             <div class="relative bg-white border border-default rounded-md shadow-sm overflow-y-auto modal-content">
-                <img src="{{ asset('img/tata tertib/tata tertib praktik lab.jpeg') }}" alt="" />
+                <img src="{{ asset('img/tata-tertib/tata-tertib-praktik-lab.jpeg') }}" alt="" />
             </div>
         </div>
     </div>
@@ -261,7 +261,7 @@
         <div class="relative w-full max-w-2xl max-h-full">
             <!-- Modal content -->
             <div class="relative bg-white border border-default rounded-md shadow-sm overflow-y-auto modal-content">
-                <img src="{{ asset('img/tata tertib/tata tertib penggunaan fasilitas lab.jpeg') }}" alt="" />
+                <img src="{{ asset('img/tata-tertib/tata-tertib-penggunaan-fasilitas-lab.jpeg') }}" alt="" />
             </div>
         </div>
     </div>
